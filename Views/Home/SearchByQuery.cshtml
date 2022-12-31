@@ -1,0 +1,31 @@
+﻿@model ExampleAPI.Models.SearchBase
+
+@{ViewData["Title"] = "Fetching Data from WebAPI";
+}
+
+
+<p>@Model.TotalHits results of <strong>"@Model.FoodSearchCriteria.Query"</strong></p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayName("FdcId")</th>
+
+            <th>@Html.DisplayName("Description")</th>
+
+            <th>@Html.DisplayName("Score")</th>
+
+        </tr>
+
+    </thead>
+    <tbody>
+        @for(int i = 0; i < Model.Foods.Length; i++)
+        {
+            <tr>
+                <td>@Model.Foods[i].FdcId</td>
+                <td>@Model.Foods[i].Description</td>
+                <td>@Model.Foods[i].Score.ToString("#.##")</td>
+            </tr>
+        }
+    </tbody>
+</table>
