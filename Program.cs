@@ -1,4 +1,7 @@
-﻿namespace ExampleAPI;
+﻿using ExampleAPI.Models;
+using ExampleAPI.Services;
+
+namespace ExampleAPI;
 
 public class Program
 {
@@ -7,6 +10,7 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
+        builder.Services.AddScoped<IApiService, ApiService>();
         builder.Services.AddControllersWithViews();
 
         var app = builder.Build();

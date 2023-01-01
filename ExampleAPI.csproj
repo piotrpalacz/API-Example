@@ -9,8 +9,14 @@
 
   <ItemGroup>
     <None Remove="Newtonsoft.Json" />
+    <None Remove="Services\" />
+    <None Remove="Constants\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+    <Folder Include="Constants\" />
   </ItemGroup>
 </Project>
